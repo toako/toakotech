@@ -3,11 +3,11 @@ import Head from 'next/head';
 import '@fortawesome/fontawesome-free/js/all.js';
 
 //Page components
-import Navigation from "./components_index/Navigation.js";
-import Greeting0 from "./components_index/Greeting0.js";
-import Portfolio1 from "./components_index/Portfolio1.js";
-import Projects2 from "./components_index/Projects2.js";
-import Contact3 from "./components_index/Contact3.js";
+import Navigation from "../components/Navigation.js";
+import Greeting0 from "../components/index/Greeting0.js";
+import Portfolio1 from "../components/index/Portfolio1.js";
+import Projects2 from "../components/index/Projects2.js";
+import Contact3 from "../components/index/Contact3.js";
 
 /*
     This component serves the homepage of the website.
