@@ -17,7 +17,7 @@ class Portfolio1 extends React.Component {
                 </Row>
                 <Row>
                     <Col>
-                        <h1 className="s1-title"><i className="fab fa-free-code-camp"></i> Certified Programmer</h1>
+                        <h1 className="s1-title"> Certified Programmer</h1>
                         <div className="s1-bar"/>
                         <p>
                             I began FreeCodeCamp in August of 2020. Though I had the ability to code and took multiple coding classes through Boise State University, I wanted to step up my
@@ -29,7 +29,7 @@ class Portfolio1 extends React.Component {
                 </Row>
                 <Row>
                     <Col>
-                        <h1 className="s1-title"><i className="fas fa-star"></i> Coding Skillsets</h1>
+                        <h1 className="s1-title"> Coding Skillsets</h1>
                         <div className="s1-bar"/>
                         <Tabs defaultActiveKey="mern" id="skl" className="mb-3">
                             <Tab eventKey="mern" title="MERN Web Development" className="s1-tab">

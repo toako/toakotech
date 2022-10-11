@@ -18,7 +18,7 @@ class Greeting0 extends React.Component {
                 <Row id="s0-header">
                     <Col>
                         <p id="s0-name">William <br/> Burciaga <br/> Kellermann</p>
-                        <p id="s0-summary">Web Developer in Boise, ID <i className="fas fa-map-marker-alt"></i></p>
+                        <p id="s0-summary">Web Developer in Boise, ID</p>
                     </Col>
                 </Row>
                 <Row id="s0-subheader">

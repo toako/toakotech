@@ -62,19 +62,19 @@ class Projects2 extends React.Component {
                             <i>Unrevealed Dungeon Crawler Game</i>
                         </p>
                         <Button className="s2-button" href="https://github.com/toako/toakotech">
-                            Source code for this website <i className="fas fa-external-link-alt fa-xs ml-2"></i>
+                            Source code for this website 
                         </Button>
                         <Button className="s2-button" href="https://www.github.com/toako">
-                            Browse my Github <i className="fas fa-external-link-alt fa-xs ml-2"></i>
+                            Browse my Github 
                         </Button>
                         <Button className="s2-button" href="https://codepen.io/toako">
-                            Projects on codepen.io <i className="fas fa-external-link-alt fa-xs ml-2"></i>
+                            Projects on codepen.io 
                         </Button>
                         <Button className="s2-button" href="https://repl.it/@toakonguf12">
-                            Projects on repl.it <i className="fas fa-external-link-alt fa-xs ml-2"></i>
+                            Projects on repl.it 
                         </Button>
                         <Button className="s2-button" href="#s2-header">
-                            Check out progress on my game! <i>Coming soon...</i> <i className="fas fa-external-link-alt fa-xs ml-2"></i>
+                            Check out progress on my game! <i>Coming soon...</i> 
                         </Button>
                     </Col>
                 </Row>

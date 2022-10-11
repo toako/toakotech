@@ -28,7 +28,7 @@ export default function Navigation () {
                     <Nav.Link className="nav-btn" href="#s3">Contact</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Nav.Link className="nav-btn" href="https://www.github.com/toako">GitHub <i className="fab fa-github fa-sm"></i></Nav.Link>
+                    <Nav.Link className="nav-btn" href="https://www.github.com/toako">GitHub</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Container>
