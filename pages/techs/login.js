@@ -72,7 +72,7 @@ class Login extends React.Component {
                     </Col>
                     <Col xs={4}></Col>
                 </Row>
-                    
+                <p>test</p>
             </Container>
         </div>);
     }
