@@ -1,10 +1,9 @@
 import React from "react";
-import { signIn } from "next-auth/react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
 import TechsNav from "../../components/techs/core/Navigation.js";
 
-class Login extends React.Component {
+class Auth extends React.Component {
     constructor(props) {
         super(props);
         
@@ -14,13 +13,21 @@ class Login extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSumbit.bind(this);
     }
 
     handleChange = (e) => this.setState({[e.target.name]:e.target.value});
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const res = signIn("credentials", { email: this.state.email, password: this.state.password });
+
+    handleSumbit = async () => {
+        console.log(this.state.email + " " + this.state.password);
+        let args = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: this.state.email, password: this.state.password })
+        };
+        const res = await fetch(`/api/register`, args);
+        const data = await res.json();
+        console.log(data);
     }
 
     render() {
@@ -29,7 +36,7 @@ class Login extends React.Component {
             <Container>
                 <Row className="my-4">
                     <Col className="text-center">
-                        <p className="display-4 text-center mb-5">Please login to Techs to continue.</p>
+                        <p className="display-4 text-center mb-5">Please register to access Techs.</p>
                     </Col>
                 </Row>
                 <Row>
@@ -48,7 +55,7 @@ class Login extends React.Component {
                                 Submit
                             </Button>
                             <br/><br/>
-                            <a href="/techs/register">Don't have an account? Click here to create one.</a>
+                            <a href="/techs/login">Already have an account? Click here to login.</a>
                         </Form>
                     </Col>
                     <Col xs={4}></Col>
@@ -58,4 +65,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default Auth;
