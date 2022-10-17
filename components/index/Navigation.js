@@ -26,9 +26,10 @@ export default function Navigation () {
                     <Nav.Link className="nav-btn" href="#s1">Portfolio</Nav.Link>
                     <Nav.Link className="nav-btn" href="#s2">Projects</Nav.Link>
                     <Nav.Link className="nav-btn" href="#s3">Contact</Nav.Link>
+                    <Nav.Link className="nav-btn" href="https://www.github.com/toako">GitHub</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Nav.Link className="nav-btn" href="https://www.github.com/toako">GitHub</Nav.Link>
+                    <Nav.Link className="nav-btn" href="/techs/login">Techs</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Container>

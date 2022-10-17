@@ -18,7 +18,7 @@ export default function Navigation() {
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Nav.Link href="/">Back to Home</Nav.Link>
+                        <Nav.Link href="/">Mainsite</Nav.Link>
                         <Nav.Link href="/techs/dashboard">Dashboard</Nav.Link>
                     </Nav>
                     <ButtonLogin/>

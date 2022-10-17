@@ -1,6 +1,10 @@
 import React from "react";
 import { getSession } from "next-auth/react";
+import { Col, Container, Row } from "react-bootstrap";
+
 import Navigation from "../../components/techs/core/Navigation";
+import TechsCard from "../../components/techs/core/dashboard/TechsCard";
+import TechsHeader from "../../components/techs/core/TechsHeader";
 
 class Dashboard extends React.Component {
     constructor (props) {
@@ -11,7 +15,19 @@ class Dashboard extends React.Component {
     render () {
         return (<div>
             <Navigation/>
-            <h1>User is logged in!</h1>
+            <TechsHeader page="Dashboard" title="Welcome to the Techs Dashboard! Please select a tech below to begin."/>
+            <Container>
+                <Row>
+                    <Col sm={4}>
+                        <TechsCard
+                            route="/techs/codingtimelogger"
+                            image="/res/techs/dashboard/codingtimelogger.jpg"
+                            title="Coding Time Logger"
+                            desc="Keep a log of all time spent coding. Start and stop new entries and view your previous entries to see progress."
+                        />
+                    </Col>
+                </Row>
+            </Container>
         </div>);
     }
 }
