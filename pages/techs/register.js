@@ -1,9 +1,10 @@
 import React from "react";
+import { getSession } from "next-auth/react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
 import TechsNav from "../../components/techs/core/Navigation.js";
 
-class Auth extends React.Component {
+class Register extends React.Component {
     constructor(props) {
         super(props);
         
@@ -65,4 +66,11 @@ class Auth extends React.Component {
     }
 }
 
-export default Auth;
+//Redirect to dashboard if logged in
+export async function getServerSideProps (context) {
+    const session = await getSession(context);
+    if (session) return { redirect: { destination: "/techs/dashboard", permanent: false } };
+    return { props: { session } };
+}
+
+export default Register;

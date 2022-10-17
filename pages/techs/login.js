@@ -1,5 +1,5 @@
 import React from "react";
-import { signIn } from "next-auth/react";
+import { signIn, getSession } from "next-auth/react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
 import TechsNav from "../../components/techs/core/Navigation.js";
@@ -20,7 +20,7 @@ class Login extends React.Component {
     handleChange = (e) => this.setState({[e.target.name]:e.target.value});
     handleSubmit = (e) => {
         e.preventDefault();
-        const res = signIn("credentials", { email: this.state.email, password: this.state.password });
+        const res = signIn("credentials", { callbackUrl: '/techs/dashboard', email: this.state.email, password: this.state.password });
     }
 
     render() {
@@ -56,6 +56,13 @@ class Login extends React.Component {
             </Container>
         </div>);
     }
+}
+
+//Redirect to dashboard if logged in
+export async function getServerSideProps (context) {
+    const session = await getSession(context);
+    if (session) return { redirect: { destination: "/techs/dashboard", permanent: false } };
+    return { props: { session } };
 }
 
 export default Login;
