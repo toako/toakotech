@@ -12,27 +12,29 @@ async function handler (req, res) {
             await connectMongo();
             console.log('DB: Connected to MongoDB');
 
-            const user = await User.findOne({email: req.body.email});
-            if (user) {
-                res.status(422).json({Auth: `FAIL: User with email <${req.body.email}> already exists.`});
+            const userEmail = await User.findOne({email: req.body.email});
+            const userUsername = await User.findOne({email: req.body.email});
+            if (userEmail || userUsername) {
+                return res.status(422).json({Auth: `FAIL: User with email <${req.body.email}> or username <${req.body.username}> already exists.`});
             }
             else {
                 let newUser = new User({
+                    username: req.body.username,
                     email: req.body.email,
                     password: await hash(req.body.password, 12)
                 });
                 newUser.save((err, data) => {
                     if (err) return console.error(err);
-                    res.status(201).json({Auth: `PASS: User <${req.body.email}> has been created successfully!`});
+                    return res.status(201).json({Auth: `PASS: User <${req.body.username},${req.body.email}> has been created successfully!`});
                 });
             }
         } catch (err) {
             console.error(err);
-            res.json({err});
+            return res.json({err});
         }
     }
     else {
-        res.status(500).json({"Error": "Request type invalid."})
+        return res.status(500).json({"Error": "Request type invalid."})
     }
 }
 

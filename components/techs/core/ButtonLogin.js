@@ -6,15 +6,15 @@ export default function ButtonLogin() {
     if (session) {
         return (
             <>
-                Signed in as {session.user.email} <br />
-                <Button className="ml-2" variant="danger" onClick={() => signOut()}>Sign out</Button>
+                Signed in as {session.username} <br />
+                <Button className="ml-sm-2 mt-2 mt-sm-0" variant="danger" onClick={() => signOut()}>Sign out</Button>
             </>
         );
     }
     return (
         <>
             Not signed in <br />
-            <Button className="ml-2" variant="primary" onClick={() => signIn()}>Sign in</Button>
+            <Button className="ml-sm-2 mt-2 mt-sm-0" variant="primary" onClick={() => signIn()}>Sign in</Button>
         </>
     )
 }

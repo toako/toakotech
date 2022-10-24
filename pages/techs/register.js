@@ -9,6 +9,7 @@ class Register extends React.Component {
         super(props);
         
         this.state = {
+            username: "",
             email: "",
             password: ""
         };
@@ -20,11 +21,10 @@ class Register extends React.Component {
     handleChange = (e) => this.setState({[e.target.name]:e.target.value});
 
     handleSumbit = async () => {
-        console.log(this.state.email + " " + this.state.password);
         let args = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: this.state.email, password: this.state.password })
+            body: JSON.stringify({ username: this.state.username, email: this.state.email, password: this.state.password })
         };
         const res = await fetch(`/api/register`, args);
         const data = await res.json();
@@ -44,9 +44,13 @@ class Register extends React.Component {
                     <Col xs={4}></Col>
                     <Col xs={4}>
                         <Form onSubmit={this.handleSubmit}>
+                            <Form.Group className="mb-3" controlId="formBasicUsername">
+                                <Form.Label>Username</Form.Label>
+                                <Form.Control type="text" placeholder="user123" name="username" value={this.state.username} onChange={this.handleChange} required/>
+                            </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" name="email" value={this.state.email} onChange={this.handleChange} required/>
+                                <Form.Control type="email" placeholder="user@domain.com" name="email" value={this.state.email} onChange={this.handleChange} required/>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>

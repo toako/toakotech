@@ -1,7 +1,7 @@
 import { Schema, model, models } from 'mongoose';
 
-const CodingTimeLog = models.CodingTimeLog || model('CodingTimeLog', new Schema({
-    userId: {
+const UserCTL = models.UserCTL || model('UserCTL', new Schema({
+    username: {
         type: String,
         required: true
     },
@@ -11,4 +11,4 @@ const CodingTimeLog = models.CodingTimeLog || model('CodingTimeLog', new Schema(
     }
 }));
 
-export default CodingTimeLog;
+export default UserCTL;

@@ -42,10 +42,12 @@ export const authOptions = {
         })
     ],
     callbacks: {
-        async jwt({ token, account }) {
+        async jwt({ token, account, user }) {
             // Persist the OAuth access_token to the token right after signin
             if (account) {
                 token.accessToken = account.access_token;
+                token.username = user.username;
+                token.email = user.email;
             }
             return token;
         },
@@ -53,6 +55,8 @@ export const authOptions = {
             // Send properties to the client, like an access_token from a provider.
             session.accessToken = token.accessToken;
             session.user.id = token.id
+            session.username = token.username;
+            session.email = token.email;
             return session;
         },
         async signIn({ user, account, profile, email, credentials }) {

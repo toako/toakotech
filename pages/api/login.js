@@ -17,20 +17,20 @@ async function handler (req, res) {
                 const checkPassword = await compare(req.body.password, user.password);
                 console.log(checkPassword ? "Password correct": "Password incorrect");
                 if (checkPassword)
-                    res.status(200).json({ id: user._id, email: user.email });
+                    return res.status(200).json({ id: user._id, email: user.email, username: user.username });
                 else 
-                    res.status(401).json({Auth: "FAIL: Login failed. Incorrect credentials."})
+                    return res.status(401).json({Auth: "FAIL: Login failed. Incorrect credentials."})
             }
             else {
-                res.status(401).json({Auth: "FAIL: User is not found."});
+                return res.status(401).json({Auth: "FAIL: User is not found."});
             }
         } catch (err) {
             console.error(err);
-            res.json({err});
+            return res.json({err});
         }
     }
     else {
-        res.status(500).json({RequestType: "Invalid request type."})
+        return res.status(500).json({RequestType: "Invalid request type."})
     }
 }
 
