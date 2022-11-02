@@ -16,9 +16,11 @@ async function handler (req, res) {
 
             const userCTL = await UserCTL.findOne({username: req.query.username});
             if (userCTL) {
-                let unfinishedEntry = userCTL.entries.filter((entry) => !entry.completed)[0]; //Searches list for an incomplete log
-                console.log(unfinishedEntry);
-                return res.status(422).json({status: "UserFound", unfinishedEntry });
+                return res.json({
+                    status: "UserFound", 
+                    incompleteEntry: filterEntries(userCTL.entries, false),
+                    completeEntries: filterEntries(userCTL.entries, true)
+                });
             }
             else {
                 return res.json({status: "NoUserFound"})
@@ -37,28 +39,41 @@ async function handler (req, res) {
             console.log('DB: Connected to MongoDB');
 
             const userCTL = await UserCTL.findOne({username: req.body.username});
+
+            /* USER FOUND */
             if (userCTL) {
-                let unfinishedEntry = userCTL.entries.filter((entry) => !entry.completed);
-                if (unfinishedEntry[0]) { //If unfinished entry, finish entry
-                    userCTL.entries[userCTL.entries.length - 1].completed = true;
-                    userCTL.entries[userCTL.entries.length - 1].endTime = DateTime.now().setZone("UTC").toISO();
-                    userCTL.entries[userCTL.entries.length - 1].notes = req.body.notes;
+                /* LOGIC FOR FINISHING ENTRY */
+                if (filterEntries(userCTL.entries, false)) {
+                    const unfinishedEntryID = userCTL.entries.length - 1;
+                    userCTL.entries[unfinishedEntryID].completed = true;
+                    userCTL.entries[unfinishedEntryID].endTime = DateTime.now().setZone("UTC").toISO();
+                    userCTL.entries[unfinishedEntryID].notes = req.body.notes;
 
                     userCTL.markModified("entries");
                     userCTL.save((err, savedUserCTL) => {
                         if (err) return console.error(err);
-                        return res.json({status: "FinishedEntry", entries: savedUserCTL.entries});
+                        return res.json({
+                            status: "FinishedEntry", 
+                            incompleteEntry: null,
+                            completeEntries: filterEntries(savedUserCTL.entries, true)
+                        });
                     });
                 }
-                else { //If no unfinished entry, start entry
+                /* LOGIC FOR STARTING ENTRY */
+                else {
                     userCTL.entries.push(createEntry(userCTL.entries.length, req.body.title));
                     userCTL.markModified("entries");
                     userCTL.save((err, savedUserCTL) => {
                         if (err) return console.error(err);
-                        return res.json({status: "StartedEntry", entries: savedUserCTL.entries});
+                        return res.json({
+                            status: "StartedEntry", 
+                            incompleteEntry: filterEntries(savedUserCTL.entries, false),
+                            completeEntries: filterEntries(savedUserCTL.entries, true)
+                        });
                     });
                 }
             }
+            /* USER NOT FOUND - ALSO START ENTRY */
             else {
                 let newEntry = createEntry(0, req.body.title);
                 let newUserCTL = new UserCTL({
@@ -67,7 +82,11 @@ async function handler (req, res) {
                 });
                 newUserCTL.save((err, newUserCTL) => {
                     if (err) return console.error(err);
-                    return res.status(201).json({status: "UserCreateAndStartedEntry", startTime: newUserCTL.entries[0].startTime});
+                    return res.json({
+                        status: "UserCreateAndStartedEntry", 
+                        incompleteEntry: filterEntries(newUserCTL.entries, false),
+                        completeEntries: []
+                    });
                 });
             }
         } catch (err) {
@@ -78,6 +97,11 @@ async function handler (req, res) {
     else {
         return res.status(500).json({"Error": "InvalidRequestType"})
     }
+}
+
+function filterEntries (entries, isCompleted) {
+    let matchingEntries = entries.filter(entry => entry.completed == isCompleted); //Filters all complete or incomplete entries depending on isCompleted
+    return (matchingEntries[0] ? (isCompleted ? matchingEntries : matchingEntries[0]) : null); //Returns matches, or empty object if none
 }
 
 function createEntry (_id, str) {
