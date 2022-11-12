@@ -1,0 +1,31 @@
+.logItemDisplay {
+    border: 1px solid #bbbbbb;
+    border-radius: 15px;
+    padding: 12px; 
+    margin: 20px 0px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+}
+.notes {
+    font-size: 16px;
+    font-weight: 300px;
+    margin-bottom: 0px;
+}
+.duration {
+    font-style: italic;
+    margin-bottom: 0;
+}
+.timeStart,
+.timeEnd {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.timeEnd {
+    margin-bottom: 0;
+}

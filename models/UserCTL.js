@@ -8,6 +8,10 @@ const UserCTL = models.UserCTL || model('UserCTL', new Schema({
     entries: {
         type: Schema.Types.Mixed,
         required: true
+    },
+    hourGoal: {
+        type: Number,
+        required: true
     }
 }));
 

@@ -1,0 +1,74 @@
+.timerContainer {
+    position: relative;
+    border: 1px solid #ced4da;
+    margin: 10px 20px 30px;
+    padding-top: 30px;
+}
+.timerTitle {
+    position: absolute;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    top: -1%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    background-color: white;
+    padding: 0px 10px;
+    z-index: 1;
+}
+@media screen and (max-width: 992px) {
+    .timerContainer {
+        padding-top: 40px;
+        margin-top: 20px;
+    }
+    .timerTitle {
+        top: 0%;
+        line-height: 24px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .timerContainer {
+        padding-top: 60px;
+        margin-top: 20px;
+    }
+    .timerTitle {
+        top: -2%;
+        line-height: 24px;
+    }
+}
+
+.timeSeconds,
+.timeMinutes,
+.timeHours,
+.timeDays {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border: 2px solid;
+    border-radius: 12px;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.timeSeconds { background-color: #C08314; border-color: #905B00; }
+.timeMinutes { background-color: #C46B16; border-color: #964900; }
+.timeHours { background-color: #C75219; border-color: #9A3504; }
+.timeDays { background-color: #CB391B; border-color: #A02107; }
+
+.timeSeconds span,
+.timeMinutes span,
+.timeHours span,
+.timeDays span {
+    box-sizing: content-box;
+    position: absolute;
+    line-height: 32px;
+    font-size: 48px;
+    margin-left: 1px;
+    text-align: center;
+    margin-top: -2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
