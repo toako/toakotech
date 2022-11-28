@@ -1,0 +1,18 @@
+.posButton {
+    background-color: #B9B9B9;
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+
+}
+
+.posButton.selected {
+    background-color: #FFA74E;
+}
+
+@media screen and (max-width: 600px) {
+    .posButton { width: 20px; height: 20px; }
+}

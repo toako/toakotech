@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { DateTime, Interval } from "luxon";
 import { Col, Row } from "react-bootstrap";
-import styles from "../../../styles/Timer.module.css";
+import styles from "../../../styles/techs/ctl/Timer.module.css";
 
 /*
 Timer.js: Functional component that acts as a timer between a start time and now

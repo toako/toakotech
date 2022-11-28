@@ -1,0 +1,43 @@
+.radioOff [type='radio'] {
+    display: none;
+}
+
+.swatch {
+    width: 80px;
+    height: 80px;
+    padding: 0px;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-width: 1px 1px 6px 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+}
+
+.colorPicker {
+    margin: auto;
+}
+
+.colorPickerPopover {
+    margin: auto;
+    position: absolute;
+    z-index: 2;
+    border: 1px solid red;
+    top: 75%;
+    left: 29.5%;
+}
+
+.colorPickerCover {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+    .swatch {
+        width: 60px;
+        height: 60px;
+    }
+}

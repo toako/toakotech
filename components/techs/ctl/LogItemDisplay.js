@@ -1,7 +1,7 @@
 import { DateTime, Interval } from "luxon";
 import { Col, Row } from "react-bootstrap";
 import chroma from "chroma-js";
-import styles from "../../../styles/LogItemDisplay.module.css";
+import styles from "../../../styles/techs/ctl/LogItemDisplay.module.css";
 
 /*
 LogItemDisplay.js: Functional component that displays a previous task

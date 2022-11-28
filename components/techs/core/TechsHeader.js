@@ -11,7 +11,7 @@ export default function TechsHeader (props) {
             </Row>
             <Row>
                 <Col>
-                    <h4>{props.title}</h4>
+                    <h4>{props.title} {props.popover}</h4>
                     <hr/>
                 </Col>
             </Row>

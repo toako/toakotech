@@ -195,11 +195,11 @@ class _CodingTimeLogger extends React.Component {
             </Container>
             <Container>
                 <Row>
-                    <Col>{this.state.weeklyInsights == null ? null : <h4 className="text-center">Logs This Week</h4>}</Col>
+                    <Col>{this.state.weeklyInsights != null ? (this.state.weeklyInsights.thisWeeksEntries != null ? <h4 className="text-center">Logs This Week</h4> : null) : null}</Col>
                 </Row>
                 <Row>
                     <Col>
-                        {this.state.weeklyInsights !== null ? this.state.weeklyInsights.thisWeeksEntries.slice(0).reverse().map(_entry => <LogItemDisplay entry={_entry} timeZoneOffset={this.state.timeZoneOffset} key={_entry.id}/>) : null}
+                        {this.state.weeklyInsights != null ? (this.state.weeklyInsights.thisWeeksEntries != null ? this.state.weeklyInsights.thisWeeksEntries.slice(0).reverse().map(_entry => <LogItemDisplay entry={_entry} timeZoneOffset={this.state.timeZoneOffset} key={_entry.id}/>) : null) : null}
                     </Col>
                 </Row>
             </Container>

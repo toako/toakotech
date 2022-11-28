@@ -1,0 +1,15 @@
+.swatch {
+    width: 80px;
+    height: 80px;
+    padding: 0px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .swatch { width: 60px; height: 60px; }
+}
+/* @media screen and (max-width: 992px) {
+    .color { width: 40px; height: 40px; }
+} */
