@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
+import GlobalFunctions from "../../../lib/GlobalFunctions";
 import styles from "../../../styles/techs/palette/PaletteViewer.module.css";
 
 export default function PaletteView (props) {
@@ -14,7 +15,7 @@ export default function PaletteView (props) {
 
     return (<Row>
         {colorRange.map(c => {
-            return <Col key={c} className="p-1 text-center" xs={3} sm={2} lg={1} onClick={(e) => copyColor(e, c)}>
+            return <Col key={GlobalFunctions.randomNumInt(0,1000000)} className="p-1 text-center" xs={3} sm={2} lg={1} onClick={(e) => copyColor(e, c)}>
                 <div className={styles.swatch} style={{backgroundColor: `#${c}`}}></div>
                 <p>{`#${c}`}</p>
             </Col>
