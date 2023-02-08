@@ -1,0 +1,398 @@
+@import "globals/colors.scss";
+
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
+$fn: "Nunito", sans-serif; //Nunito variable
+$fos: "Open Sans", sans-serif; //Roboto variable
+$op: "Overpass", sans-serif;
+$ns: "Nunito Sans", sans-serif;
+
+// Breakpoints
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// WEBSITE NAVIGATION BAR
+///////////////////////////////////////////////////
+.navbarTT {
+    background-color: $gray-200 !important;
+    box-shadow: 0px 2px 7px 2px rgba($black, 0.1) !important;
+}
+
+.navbarTT .nav-logo{
+    background: url("/res/logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: none;
+	padding: 0;
+	outline: inherit;
+    max-width: 256px;
+    max-height: 32px;
+    width: 16rem;
+    height: 2rem;
+}
+
+.navbarTT .navLogo:hover {
+    background: url("/res/logo2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.navBtn {
+    background: none;
+	border: none;
+	padding: 0;
+	outline: inherit;
+    font-size: 1.4rem;
+    color: $infnavy !important;
+    font-family: $ns;
+    font-weight: 700;
+    margin: 8px 20px 8px 20px;
+}
+
+.navBtn:focus {
+    outline: inherit !important;
+}
+.navBtn:hover {
+    transform: scale(1.05) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.07s !important;
+    font-weight: 800;
+}
+.navBtn:not(:hover) {
+    transform: scale(1) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.07s !important;
+}
+
+/*
+    GLOBAL VARS
+*/
+
+.sec-title {
+    font-family: $op;
+    font-size: 70px;
+    line-height: 75px;
+    font-weight: 700;
+}
+
+/*
+    SECTION 0 (Greeting Area)
+*/
+.s0 {
+    margin: 0;
+    min-width: 100%;
+    padding: 0 15% 50px;
+    background-color: $infnavy;
+    font-family: $ns;
+}
+
+.s0Header {
+    padding: 130px 0px 70px;
+}
+
+// BEGIN Gradient background. Credit to Ian Forest https://www.gradient-animator.com/ https://www.ianforrest.com/
+.s0Animbg {
+    background: linear-gradient(270deg, #1e3c64, #0089e1, #663399, #b416ec);
+    background-size: 800% 800%;
+    -webkit-animation: GradientBG 35s ease infinite;
+    -moz-animation: GradientBG 35s ease infinite;
+    -o-animation: GradientBG 35s ease infinite;
+    animation: GradientBG 35s ease infinite;
+}
+@-webkit-keyframes GradientBG {
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
+}
+@-moz-keyframes GradientBG {
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
+}
+@-o-keyframes GradientBG {
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
+}
+@keyframes GradientBG {
+    0%{background-position:63% 0%}
+    50%{background-position:38% 100%}
+    100%{background-position:63% 0%}
+}
+// END Gradient Background
+
+.s0Name {
+    font-family: $op;
+    font-size: 100px;
+    line-height: 100px;
+    color: $gray-200;
+    font-weight: 700;
+    text-align: center;
+}
+
+.s0Summary {
+    font-family: $op;
+    font-size: 42px;
+    line-height: 42px;
+    color: $gray-200;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+.s0Subheader {
+    align-items: center;
+}
+
+.s0HR {
+    background-color: $gray-200;
+    width: 80%;
+    margin: 0 10% 45px;
+}
+
+.s0DescText {
+    font-size: 24px;
+    font-weight: 300;
+    color: $gray-200;
+    margin: auto 10% 100px;
+}
+
+.s0JumpTitle {
+    text-align: center;
+    color: $gray-700;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 30px 0px 30px;
+}
+
+@media screen and ( max-width: $md ) {
+    .s0 { padding: 0 7.5% 50px; }
+    .s0Header { padding: 70px 0px 30px; }
+    .s0Name{ font-size: 70px; line-height: 70px; } 
+    .s0Summary { font-size: 28px; line-height: 28px; }
+    .s0HR { margin: 0 10% 25px; }
+    .s0DescText { font-size: 20px; font-weight: 400; color: $gray-200; margin: auto 10% 50px; }
+}
+@media screen and ( max-width: $sm ) {
+    .s0 { padding: 0 4% 50px; }
+    .s0Header { padding: 70px 0px 30px; }
+    .s0Name{ font-size: 48px; line-height: 48px; } 
+    .s0Summary { font-size: 26px; line-height: 22px; }
+    .s0HR { margin: 0 10% 25px; }
+    .s0s0DescText { font-size: 20px; font-weight: 400; color: $gray-200; margin: auto auto 50px; }
+}
+
+/*
+    SECTION 1 (Portfolio)
+*/
+.s1 {
+    margin: 0;
+    min-width: 100%;
+    padding: 0 20% 50px;
+    background-color: $gray-200;
+    color: $gray-900;
+    font-family: $ns;
+    font-size: 24px;
+    line-height: 44px;
+    font-weight: 300;
+}
+
+.s1Header {
+    font-family: $op;
+    font-size: 72px;
+    font-style: italic;
+    line-height: 72px;
+    font-weight: 200;
+    color: $gray-200;
+    background-color: $infpurple;
+    margin: 20px auto 0;
+    padding: 15px 30px 3px;
+    border-radius: 20px 0px 20px 0px;
+    text-align: center;
+    display: inline-block;
+}
+
+.s1Title {
+    padding-top: 20px;
+    color: $infpurple;
+    font-weight: bold;
+}
+
+.s1Bar {
+    width: 100%;
+    height: 2px;
+    border-color: $gray-500;
+    border-width: 1px 0;
+    border-style: solid none;
+    margin: 10px 0px 20px;
+}
+
+@media screen and ( max-width: $md ) {
+    .s1 { 
+        padding: 0 7.5% 50px; 
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+    #s1Header {
+        font-size: 44px;
+        line-height: 44px;
+        margin: 0px auto 0;
+        border-radius: 15px 0px 15px 0px;
+    }
+    .s1Title {
+        padding-top: 5px;
+        font-size: 26px;
+        text-align: center;
+    }
+}
+@media screen and ( max-width: $sm ) {
+    .s1 { padding: 0 4% 50px; }
+}
+
+/*
+    SECTION 2 (Projects)
+*/
+.s2 {
+    margin: 0;
+    min-width: 100%;
+    padding: 0 20% 50px;
+    background-color: $gray-700;
+    color: $gray-900;
+    font-family: $ns;
+    font-size: 24px;
+    line-height: 44px;
+    font-weight: 300;
+    color: 100;
+}
+
+.s2Header {
+    font-family: $op;
+    font-size: 72px;
+    font-style: italic;
+    line-height: 72px;
+    font-weight: 200;
+    color: $gray-700;
+    background-color: $yellow;
+    margin: 20px auto 0;
+    padding: 15px 30px 3px;
+    border-radius: 20px 0px 20px 0px;
+    text-align: center;
+    display: inline-block;
+}
+
+.s2Button {
+    width: 90%;
+    margin: 10px 5%;
+    border-radius: 5px;
+    border-width: 0px 0px 2px;
+    font-size: 20px;
+    background-color: rgba($gray-500, 0.6);
+    border-color: $yellow;
+    padding-top: 10px;
+    -webkit-box-shadow: 0px 8px 14px -1px rgba($gray-900,0.1);
+    box-shadow: 0px 12px 8px -1px rgba($gray-900,0.1);
+}
+
+.s2Button:hover {
+    background-color: $yellow;
+    border-color: $yellowhover;
+    color: $gray-700;
+    border-width: 0px 0px 4px;
+    padding-bottom: 4px;
+}
+
+@media screen and ( max-width: $md ) {
+    .s2 { 
+        padding: 0 7.5% 50px; 
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+    .s2Header {
+        font-size: 44px;
+        line-height: 44px;
+        margin: 0px auto 0;
+        border-radius: 15px 0px 15px 0px;
+    }
+}
+@media screen and ( max-width: $sm ) {
+    .s2 { padding: 0 4% 50px; }
+}
+
+/*
+    SECTION 3 (Contact)
+*/
+.s3 {
+    margin: 0;
+    min-width: 100%;
+    padding: 0 20% 10px;
+    background-color: $gray-400;
+    color: $gray-900;
+    font-family: $ns;
+    font-size: 24px;
+    line-height: 44px;
+    font-weight: 300;
+    color: 100;
+}
+
+.s3Header {
+    font-family: $op;
+    font-size: 72px;
+    font-style: italic;
+    line-height: 72px;
+    font-weight: 200;
+    color: $gray-400;
+    background-color: $infnavy;
+    margin: 20px auto 0;
+    padding: 15px 30px 3px;
+    border-radius: 20px 0px 20px 0px;
+    text-align: center;
+    display: inline-block;
+}
+
+.s3Link {
+    font-weight: bold;
+    color: $infnavy;
+}
+
+.s3Bar {
+    width: 40%;
+    height: 1px;
+    background-color: rgba($gray-500, 0.5);
+    margin: 50px 30% 20px;
+}
+
+#s3Footer {
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+@media screen and ( max-width: $md ) {
+    .s3 { 
+        padding: 0 7.5% 50px; 
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+    .s3Header {
+        font-size: 44px;
+        line-height: 44px;
+        margin: 0px auto 0;
+        border-radius: 15px 0px 15px 0px;
+    }
+}
+@media screen and ( max-width: $sm ) {
+    .s3 { padding: 0 4% 50px; }
+}

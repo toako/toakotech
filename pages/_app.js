@@ -1,5 +1,6 @@
 import React from 'react';
 import { SessionProvider } from "next-auth/react";
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import '../styles/main.scss';
 
 

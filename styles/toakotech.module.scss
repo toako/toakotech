@@ -1,0 +1,559 @@
+@import "globals/colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$bw: "Barlow", sans-serif;
+
+.main {
+    background-color: $gs2;
+}
+
+/* For hiding a <br> on mobile widths*/
+.brHideMobile { display: block; }
+@media screen and (max-width: 576px) { .brHideMobile { display: none; } }
+
+/*********************
+    NAVBAR CONTENT
+*********************/
+.cNavbar {
+    background-color: rgba($gs2, 0.98) !important;
+    height: 100px;
+}
+
+.visibleNavLogo.cNavbarLogo {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    height: 51px;
+}
+.visibleNavLogo.cNavbarLogo:hover {
+    content: url("/res/logos/ToakoTech_GreenBlue.png") !important;
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1.25) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.15s !important;
+}
+.visibleNavLogo.cNavbarLogo:not(:hover) {
+    transform: translate(-50%, -50%) scale(1) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.15s !important;
+}
+
+.hiddenNavLogo.cNavbarLogo,
+.hiddenNavLogo.cNavbarLogo:hover,
+.hiddenNavLogo.cNavbarLogo:not(:hover) {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    height: 51px;
+}
+
+
+.cNavbarLinkLeft, .cNavbarLinkRight, .cNavbarLinkLeftDisabled, .cNavbarLinkRightDisabled {
+    font-size: 20px;
+    line-height: 20px;
+    font-family: $bw !important;
+    font-weight: 500;
+    margin: 0px 10px;
+    vertical-align: top;
+    
+}
+.cNavbarLinkLeft:hover , .cNavbarLinkRight:hover {
+    transform: scale(1.05) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.15s !important;
+    font-weight: 600;
+}
+.cNavbarLinkLeft:not(:hover), .cNavbarLinkRight:not(:hover) {
+    transform: scale(1) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.15s !important;
+}
+
+.cNavbarLinkLeft { color: $navPurple !important; }
+.cNavbarLinkLeft:hover { color: $navGreen !important; }
+.cNavbarLinkLeft:active { color: $navGreenActive !important; }
+.cNavbarLinkLeftDisabled { color: $navPurpleDisabled !important; }
+
+.cNavbarLinkRight { color: $navOrange !important; }
+.cNavbarLinkRight:hover { color: $navBlue !important; }
+.cNavbarLinkRight:active { color: $navBlueActive !important; }
+.cNavbarLinkRightDisabled { color: $navOrangeDisabled !important; }
+
+@media screen and (max-width: 768px) {
+    .cNavbar {
+        padding: 7.5px 0px;
+        height: 50px;
+    }
+    .visibleNavLogo.cNavbarLogo {
+        height: 31px;
+    }
+}
+
+/*********************
+Section 1 - Heading
+*********************/
+.heading {
+    height: 91.5vh;
+    position: relative;
+}
+.headingContentBox {
+    position: absolute;
+    top: 45.75%;
+    left: 50%;
+    transform: translate(-50%, -45.75%);
+    text-align: center;
+}
+
+.headingLogo {
+    width: 100%;
+    height: auto;
+    margin-left: -0%;
+}
+
+.headingText {
+    font-family: $bw !important;
+    color: $navPurple;
+    font-size: 30px;
+    text-align: center;
+    margin: 60px 0px;
+    font-weight: 300;
+}
+
+.headingButton {
+    color: $navOrange !important;
+    background-color: $gs3 !important;
+    border: none;
+    display: inline-block;
+    margin: auto;
+    padding: 10px 20px 12px;
+    font-size: 20px;
+    line-height: 20px;
+    vertical-align: center;
+    font-weight: 500;
+    font-family: $bw !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0px 2px 4px rgba($gs1,0.75);
+    border-radius: 5px;
+}
+
+.headingButton:hover {
+    color: $navOrangeHover !important;
+    transform: scale(1.05);
+    transition-timing-function: ease-in;
+    transition: 0.15s;
+    text-decoration: none;
+
+}
+.headingButton:not(:hover) {
+    transform: scale(1) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.15s !important;
+}
+@media screen and (max-width: 768px) {
+    .heading {
+        height: 94.5vh;
+    }
+    .headingContentBox {
+        left: 10%;
+        transform: translate(-5%, -45.75%);
+    }
+    .headingText {
+        font-size: 32px;
+    }
+}
+
+
+/***************************
+    Section 2 - Overview
+***************************/
+
+.s2 {
+    background-color: $gs3;
+    padding: 80px 30px;
+}
+
+.s2TextHeading {
+    font-family: $bw !important;
+    color: $navPurple;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 300;
+    margin: 0px 10px 20px;
+}
+.s2TextHeadingBar {
+    background-color: $navPurple;
+    width: 300px;
+    height: 2px;
+    margin: 20px auto;
+}
+
+.s2TextSubHeading {
+    font-family: $bw !important;
+    color: $gs11;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 10px;
+}
+
+.s2FeatureRow {
+    margin-top: 60px;
+}
+
+.s2FeatureBox {
+    background-color: $gs2;
+    padding: 30px 0px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba($gs1, 0.75);
+}
+.s2FeatureBox:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition-timing-function: ease-in;
+    transition: 0.15s;
+}
+.s2FeatureBox:not(:hover) {
+    transform: scale(1) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.15s !important;
+}
+
+.s2Blue p { color: $navBlue; }
+.s2Orange p { color: $navOrange; }
+.s2Green p { color: $navGreen; }
+
+.s2Blue:hover p { color: $navBlueHover; }
+.s2Orange:hover p { color: $navOrangeHover; }
+.s2Green:hover p { color: $navGreenHover; }
+.s2Blue:hover { border: 2px solid $navBlueHover; }
+.s2Orange:hover { border: 2px solid $navOrangeHover; }
+.s2Green:hover { border: 2px solid $navGreenHover; }
+
+
+.s2FeatureTextTitle {
+    font-family: $bw !important;
+    color: $gs11;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 10px;
+}
+
+.s2FeatureText {
+    font-family: $bw !important;
+    color: $gs10;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0px 50px 10px
+}
+
+.s2FeatureText span {
+    background-color: $gs3;
+    line-height: 20px;
+    padding: 8px 24px 10px;
+    border-radius: 10px;
+}
+.s2Blue:hover p span { background-color: $navBlueHover; color: $gs2; }
+.s2Orange:hover p span { background-color: $navOrangeHover; color: $gs2; }
+.s2Green:hover p span { background-color: $navGreenHover; color: $gs2; }
+
+.s2Br { display: block; }
+
+@media screen and (max-width: 1310px) {
+    .s2Br {display: none; }
+}
+@media screen and (max-width: 576px) {
+    .s2 {padding: 30px 20px 40px; }
+    .s2FeatureRow {margin-top: 10px;}
+    .s2TextHeading { font-size: 32px; }
+    .s2TextSubHeading { font-size: 20px; }
+    .s2FeatureText { margin: 0px 10px 10px; font-size: 18px;}
+}
+
+/***************************
+    Section 3 - Interim
+***************************/
+
+.s3 {
+    padding: 20px 20%;
+    background-color: $interimMenu2;
+}
+
+.s3Logo {
+    width: 60%;
+    margin: 10px 20%;
+}
+
+.s3Heading {
+    font-family: $bw !important;
+    color: $interimMenu9;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 400;
+    margin: 10px 10px 30px;
+}
+
+.s3HeadingBar {
+    background-color: $interimMenu9;
+    width: 300px;
+    height: 2px;
+    margin: 20px auto;
+}
+
+.s3PointColumn {
+    padding: 10px;
+}
+
+.s3PointBox {
+    background-color: $interimMenu5;
+    border-radius: 7px;
+    align-items: center;
+    margin: 5px;
+    -webkit-box-shadow: 0px 10px 16px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 16px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 16px -3px rgba(0,0,0,0.75);
+    border-width: 2px 0px 0px;
+    border-color: $interimMenu6;
+    border-style: solid;
+}
+
+.s3PointImage {
+    width: 48px;
+    height: 48px;
+    margin: 10px 0px;
+    border: 1px solid $gray-700;
+    border-radius: 5px;
+}
+
+.s3PointTitle {
+    font-family: $bw !important;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 0px !important;
+}
+
+.s3Point {
+    font-family: $bw !important;
+    color: white;
+    font-size: 18px;
+}
+
+.s3TextMobile { display: none; }
+
+.s3Bottom {
+    font-family: $bw !important;
+    color: $interimMenu9;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 10px;
+}
+
+@media screen and (max-width: 1600px) {
+    .s3 {padding: 20px 10%;}
+    .s3PointTitle { font-size: 20px; }
+}
+@media screen and (max-width: 1180px) {
+    .s3 {padding: 20px 5%;}
+    .s3PointTitle { font-size: 18px; }
+}
+@media screen and (max-width: 992px) {
+    .s3PointTitle { font-size: 24px; }
+}
+@media screen and (max-width: 768px) {
+    .s3PointTitle { font-size: 24px; padding-bottom: 10px;}
+    .s3Point { margin-bottom: 0; }
+    .s3TextDesktop { display: none; }
+    .s3TextMobile { display: block; }
+}
+@media screen and (max-width: 576px) {
+    .s3Logo { width: 90%; margin: 10px 5%;}
+    .s3Heading { font-size: 20px; }
+    .s3PointTitle { font-size: 20px; }
+    .s3Point { font-size: 16px; }
+}
+/***************************
+    Section 4 - Web Dev
+***************************/
+
+.s4 {
+    background-color: $gs1;
+    padding: 85px 30px;
+}
+
+.s4TextHeading {
+    font-family: $bw !important;
+    color: $navBlue;
+    font-size: 48px;
+    text-align: center;
+    font-weight: 300;
+    margin: 20px 10px;
+    text-shadow: 0px 0px 4px rgba($navBlue,0.5);
+}
+.s4TextHeadingBar {
+    background-color: $navBlue;
+    width: 300px;
+    height: 2px;
+    margin: 20px auto;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba($navBlue,0.5); 
+    box-shadow: 0px 0px 4px 0px rgba($navBlue,0.5);
+}
+
+.s4TextSubHeading {
+    font-family: $bw !important;
+    color: $gs10;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 10px;
+}
+
+.s4Row {
+    margin-top: 50px;
+}
+
+.s4Column {
+    border-width: 0px 2px 0px 0px;
+    border-style: solid;
+    border-image: linear-gradient(rgba(58,227,244,0) 30%, rgba(58,227,244,.5) 50%, rgba(58,227,244,0) 70%) 90;
+}
+.s4Column:last-child {
+    border: none;
+}
+
+.s4FeatureTextTitle {
+    font-family: $bw !important;
+    color: $navBlue;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 10px;
+    text-shadow: 0px 0px 4px rgba($navBlue,0.5);
+}
+
+.s4FeatureImage {
+    display: block;
+    width: 40%;
+    height: auto;
+    margin: 15px 30%;
+}
+
+.s4FeatureText {
+    font-family: $bw !important;
+    color: $gs10;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px 70px 10px
+}
+
+.s4Icon {
+    text-align: center;
+    color: $navBlue;
+}
+
+.s4TextSubHeading a {
+    color: $navGreen !important;
+    background-color: $gs3 !important;
+    border: none;
+    display: inline-block;
+    margin: 20px auto 0px;
+    padding: 10px 20px 12px;
+    font-size: 20px;
+    line-height: 20px;
+    vertical-align: center;
+    font-weight: 500;
+    font-family: $bw !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0px 2px 4px rgba($gs1,0.75);
+}
+
+.s4TextSubHeading a:hover {
+    color: $navGreenHover !important;
+    transform: scale(1.05);
+    transition-timing-function: ease-in;
+    transition: 0.15s;
+
+}
+.headingButton a:not(:hover) {
+    transform: scale(1) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.15s !important;
+}
+
+@media screen and (max-width: 1600px) {
+    .s4 {padding: 50px 30px; }
+    .s4FeatureText { margin: 0px 20px 10px; }
+}
+@media screen and (max-width: 768px) {
+    .s4Column { border: none; }
+}
+@media screen and (max-width: 576px) {
+    .s4 {padding: 20px 20px 40px; }
+    .s4Row { margin-top: 0px; }
+    .s4TextHeading { font-size: 32px; }
+    .s4TextSubHeading { font-size: 20px; }
+    .s4FeatureTextTitle { margin: 30px 0px 0px; font-size: 24px; }
+    .s4FeatureText {font-size: 18px; margin: 0;}
+}
+
+/***************************
+        Footer
+***************************/
+.footer {
+    background-color: $gs3;
+}
+
+.footerLogo {
+    width: 100%;
+    height: auto;
+}
+
+.footerLinkText {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.footerLink, .footerLinkDisabled {
+    font-size: 20px;
+    font-family: $bw;
+    font-weight: 500;
+    margin: 0px 10px;
+    vertical-align: middle;
+    color: $navOrange;
+}
+.footerLink:hover {
+    transform: scale(1.2) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.05s !important;
+    font-weight: 600;
+    color: $navOrangeHover;
+    text-decoration: none;
+}
+.footerLink:not(:hover) {
+    transform: scale(1) !important;
+    transition-timing-function: ease-in !important;
+    transition: 0.05s !important;
+}
+.footerLinkDisabled {
+    color: $navOrangeDisabled;
+    pointer-events: none;
+}
+
+.footerText {
+    font-size: 16px;
+    font-family: $bw;
+    font-weight: 500;
+    margin: 0px 10px;
+    vertical-align: middle;
+    color: $navPurple;
+    text-align: center;
+}
