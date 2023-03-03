@@ -391,11 +391,11 @@
 @media screen and (max-width: 1600px) {
     .s1 { padding: 50px 50px 50px; }
 }
-@media screen and (max-width: 1460px) {
-    .s1NameBreakpoint {
-        display: block;
-    }
-}
+// @media screen and (max-width: 1460px) {
+//     .s1NameBreakpoint {
+//         display: block;
+//     }
+// }
 @media screen and (max-width: 992px) {
     .s1 { padding: 50px 80px 50px; }
     .s1Name { font-size: 50px; line-height: 65px;}
@@ -405,6 +405,7 @@
 @media screen and (max-width: 768px) {
     .s1Profile { width: 192px; height: auto; }
     .s1Name { font-size: 40px; line-height: 55px; }
+    .s1NameBreakpoint { display: block; }
     .s1TopRow { margin-bottom: 20px; }
 }
 @media screen and (max-width: 576px) {

@@ -48,6 +48,7 @@ class Will extends React.Component {
                 <title>ToakoTech - Will's Portfolio</title>
                 <link rel="icon" href="/res/icon.png" />
             </Head>
+            {/* Navbar */}
             <Navbar bg="light" expand="lg" fixed="top" className={`${styles.cNavbar} ${this.state.showNavbar ? styles.fadeInDown : styles.fadeOutUp}`}>
                 <Nav.Link href="/" className={styles.cLinkHome}>
                     <FontAwesomeIcon className="mr-1" size="2xl" icon={faCaretLeft} />
@@ -88,12 +89,12 @@ class Will extends React.Component {
             {/* Section 1 - About Me */}
             <Container id="about-me" className={styles.s1} fluid>
                 <Row className={`${styles.s1TopRow} align-items-center`}>
-                    <Col xs={12} sm={8} xl={9} className="pl-0">
+                    <Col xs={12} className="pl-0"> {/* sm={8} xl={9}  */}
                         <p className={styles.s1Name}>Nice to meet you! <br className={styles.s1NameBreakpoint} />My name is Will.</p>
                     </Col>
-                    <Col xs={12} sm={4} xl={3} className="pr-0">
+                    {/* <Col xs={12} sm={4} xl={3} className="pr-0">
                         <Image src="/res/pixel_will_pagefit.png" alt="Pixel Will" className={styles.s1Profile} />
-                    </Col>
+                    </Col> */}
                 </Row>
                 <Row>
                     <Col xs={12} lg={6} className={styles.s1ColLeft}>
