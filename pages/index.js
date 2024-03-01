@@ -106,7 +106,7 @@ class ToakoTech extends React.Component {
                                 <br />
                                 Game development is the primary vision for ToakoTech.
                                 I am currently building a 2D-topdown game in Unity.
-                                <br /><br /><span>LEARN MORE</span>
+                                <br /><br /><span>COMING SOON</span>
                             </p>
                         </div>
                     </Col>
@@ -138,7 +138,7 @@ class ToakoTech extends React.Component {
                     </Col>
                 </Row>
             </Container>
-            {/* Section 3 - Interim */}
+            {/* Section 3 - Interim 
             <Container id="s3" className={`${styles.s3}`} fluid>
                 <Row>
                     <Col>
@@ -160,7 +160,7 @@ class ToakoTech extends React.Component {
                         </p>
                     </Col>
                 </Row>
-            </Container>
+            </Container>*/}
             {/* Section 4 - Web Development */}
             <Container id="s4" className={`${styles.s4}`} fluid>
                 <Row>
