@@ -206,7 +206,7 @@ class Will extends React.Component {
                             <p className={styles.s3SkillHeading}>Coding Abilities</p>
                             <p className={styles.s3SkillTitle}>Languages I Know:</p>
                             <p className={styles.s3SkillText}>
-                                HTML, CSS, SCSS, JS, TS, C#, C, Java, Python, Git
+                                HTML, CSS, SCSS, JS, TS, C#, C, PHP, Java, Python, Git
                             </p>
                             <p className={styles.s3SkillTitle}>Libraries & Frameworks:</p>
                             <ul className={styles.s3SkillList}>
@@ -360,7 +360,6 @@ class Will extends React.Component {
                             <a href="mailto:williamebk@gmail.com"><p>Email <FontAwesomeIcon className="ml-2" icon={faEnvelope} /></p></a>
                             <a href="https://www.github.com/toako"><p>GitHub <FontAwesomeIcon className="ml-2" icon={faGithub} /></p></a>
                             <a href="https://www.linkedin.com/in/william-kellermann-078a481b7/"><p>Linked<FontAwesomeIcon className="ml-1" size="lg" icon={faLinkedin} /></p></a>
-                            <a href="https://twitter.com/WillKellermann"><p>Twitter <FontAwesomeIcon className="ml-2" icon={faTwitter} /></p></a>
                             <a href="https://www.twitch.tv/toakotech"><p>Twitch <FontAwesomeIcon className="ml-2" icon={faTwitch} /></p></a>
                             <a href="https://join.skype.com/invite/owbh7dDNDIQ1"><p>Skype <FontAwesomeIcon className="ml-2" icon={faSkype} /></p></a>
                         </div>
